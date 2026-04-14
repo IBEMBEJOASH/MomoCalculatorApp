@@ -35,13 +35,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.ndejje.momocalc.ui.theme.MoMoAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            MaterialTheme(typography = MomoTypography) {
+            MoMoAppTheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
                     Scaffold(
                         topBar = { MoMoTopBar() }
@@ -75,9 +76,9 @@ fun MoMoTopBar() {
             )
         },
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-            containerColor = MaterialTheme.colorScheme.primaryContainer,
-            titleContentColor = MaterialTheme.colorScheme.primary,
-            navigationIconContentColor = MaterialTheme.colorScheme.primary
+            containerColor = MaterialTheme.colorScheme.primary,
+            titleContentColor = MaterialTheme.colorScheme.onPrimary,
+            navigationIconContentColor = MaterialTheme.colorScheme.onPrimary
         )
     )
 }
@@ -149,7 +150,7 @@ fun MoMoCalcScreen(modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun MomoCalcPreview() {
-    MaterialTheme(typography = MomoTypography) {
+    MoMoAppTheme {
         Surface {
             MoMoCalcScreen()
         }
