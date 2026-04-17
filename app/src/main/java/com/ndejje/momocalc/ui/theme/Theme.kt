@@ -5,7 +5,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import com.ndejje.momocalc.MomoTypography
+import com.ndejje.momocalc.MoMoTypography
 
 private val LightColorScheme = lightColorScheme(
     primary         = NavyBlue,
@@ -42,7 +42,7 @@ fun MoMoAppTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography  = MomoTypography,
+        typography  = MoMoTypography,
         shapes      = MoMoShapes,
         content     = content
     )
