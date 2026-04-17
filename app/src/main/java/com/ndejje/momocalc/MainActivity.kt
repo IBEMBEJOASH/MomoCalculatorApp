@@ -1,5 +1,6 @@
 package com.ndejje.momocalc
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -147,10 +148,24 @@ fun MoMoCalcScreen(modifier: Modifier = Modifier) {
     }
 }
 
-@Preview(showBackground = true)
+@Preview(name = "Light Mode", showBackground = true)
 @Composable
-fun MomoCalcPreview() {
-    MoMoAppTheme {
+fun PreviewLight() {
+    MoMoAppTheme(darkTheme = false) {
+        Surface {
+            MoMoCalcScreen()
+        }
+    }
+}
+
+@Preview(
+    name = "Dark Mode",
+    showBackground = true,
+    uiMode = Configuration.UI_MODE_NIGHT_YES
+)
+@Composable
+fun PreviewDark() {
+    MoMoAppTheme(darkTheme = true) {
         Surface {
             MoMoCalcScreen()
         }
